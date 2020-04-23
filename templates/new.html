@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body%}
+{%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            
+         </div>
+      {%- endfor %}
+      
+      <form action = "{{ request.path }}" method = "post">
+         <div class="form-group">
+            <label for = "name">Nombre</label><br>
+         <input type = "text" name = "name" placeholder = "Nombre" /><br>
+         <label for = "email">Genero</label><br>
+         <input type = "text" name = "city" placeholder = "Genero" /><br>
+         <label for = "addr">Duracion</label><br>
+
+         <input type = "text" name = "addr" placeholder = "Duracion" /><br>
+         
+
+
+         <label for = "PIN">Año Lanzamiento</label><br>
+         <input type = "text" name = "pin" placeholder = "Año" /><br>
+         <input type = "submit" value = "Submit" />
+         </div>
+      </form>
+{% endblock %}

@@ -1,0 +1,40 @@
+body{
+	font-family: sans-serif;
+	background-color: coral
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+
+
+
+
+  <table classs="table-dark">
+         <thead class="thead-dark">
+            <tr>
+               <th scope="col">Nombre</th>
+               <th scope="col">Genero</th>
+               <th scope="col">Duracion</th>
+               <th scope="col">Fecha</th>
+               <th scope="col">Año Lanzamiento</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for student in students %}
+               <tr>
+                  <td>{{ student.name }}</td>
+                  <td>{{ student.city }}</td>
+                  <td>{{ student.addr }}</td>
+                  <td>{{ student.pin }}</td>
+                  <td>
+                     <a href="/delete/{{student.id}}">Borrar</a>
+                    <br>
+                    
+                  </td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>

@@ -1,0 +1,51 @@
+{%  extends 'base.html'%}
+   
+   {% block body %} 
+
+      
+      
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+      
+      <h3>Peliculas (<a href = "{{ url_for('new') }}">
+         Agregar Pelicula
+         </a>)
+      </h3>
+      
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Duracion</th>
+      <th scope="col">Año Lanzamiento</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tbody>
+            {% for student in students %}
+               <tr>
+                  <td>{{ student.name }}</td>
+                  <td>{{ student.city }}</td>
+                  <td>{{ student.addr }} min</td>
+                  <td>{{ student.pin }}</td>
+                  <td>
+                     <a href="/delete/{{student.id}}" class="alert alert-danger">Borrar</a>
+                    <br>
+                    
+                  </td>
+               </tr>
+            {% endfor %}
+         </tbody>
+  </tbody>
+</table>
+
+
+
+
+
+
+{% endblock %}
